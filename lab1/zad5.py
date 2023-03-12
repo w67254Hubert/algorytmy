@@ -13,7 +13,7 @@ for x in lista:
 print(lista[1,0])
 print(lista[0,0])
 '''
-# drugie podejście po edukacji że jednak nie potrzebuje nupmy by stworzyć tablice wielowymiarową
+# drugie podejście po edukacji że jednak nie potrzebuje nupmy by stworzyć tablice wielowymiarową.
 
 lista = [[0,-2,0,4,3,5,],[6,7,-9,8,-2,9]]
 
