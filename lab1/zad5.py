@@ -18,7 +18,7 @@ print(lista[0,0])
 lista = [[0,-2,0,4,3,5,],[6,7,-9,8,-2,9]]
 
 for x in lista:
-    minim = min(x) 
+    minim = min(x)
     i = x.index(minim)
     x[0], x[i] = x[i], x[0]
 
