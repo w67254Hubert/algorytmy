@@ -1,5 +1,6 @@
 #pierwsza myśl znajduje minimalną ale nie mam pomysłu jak zaimplementować zmianę wartości
-'''import numpy as np
+'''
+import numpy as np
 
 lista=np.array([[0,-2,0,4,3,5,],[6,7,-9,8,-2,9]])
 
