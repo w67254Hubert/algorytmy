@@ -25,23 +25,22 @@ n = 6
 i=0
 
 while i<(n-1):
-    print("zmiany i", i)
+    # print("zmiany i", i)
     min=i
 
     j=i+1
     
     while j<n:
-        print("zmmiany j", j)
+        # print("zmmiany j", j)
         if a[j]<a[min]:
-            print(a[j],"zkjcbsdkfkjsdhfjkdhjk<",a[min])
+            # print(a[j],"zkjcbsdkfkjsdhfjkdhjk<",a[min])
             min=j
-            print(min)
+            # print(min)
         j=j+1
     
-
+    print(a)
     t=a[min]
     a[min]=a[i]
     a[i]=t
-
     i=i+1
-print("nowa tablica", a)
+# print("nowa tablica", a)
