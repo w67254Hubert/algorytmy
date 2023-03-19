@@ -27,6 +27,7 @@ i=0
 while i<(n-1):
     # print("zmiany i", i)
     min=i
+    print(min)
 
     j=i+1
     
@@ -35,12 +36,15 @@ while i<(n-1):
         if a[j]<a[min]:
             # print(a[j],"zkjcbsdkfkjsdhfjkdhjk<",a[min])
             min=j
-            # print(min)
+
         j=j+1
     
-    print(a)
+    # print(a)
+    # print('whule',min)
+
     t=a[min]
     a[min]=a[i]
     a[i]=t
+    print(a)
     i=i+1
-# print("nowa tablica", a)
+print("nowa tablica", a)
