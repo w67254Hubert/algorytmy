@@ -12,6 +12,9 @@ tab = [1, 2, 3, 4, 5]
 odwracanie(tab)
 print("tab po funkcji odwaracanie", tab) #porządany wynik: [5, 4, 3, 2, 1]
 
+
+
+
 #odwrucenie tablicy w funkcji rekurencjnnie
 def RekOdw(tab, start, end):
     if start >= end:
