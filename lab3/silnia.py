@@ -1,9 +1,11 @@
-def silnia(n)
+
+
+def silnia(n):
     if n==0: return 1
     else: return n*silnia(n-1)
 
 #wersja pierwsza nwdIteracyjne
-def nwdIter(a,b)
+def nwdIter(a,b):
     while a!=b:
         if a>b: a=a-b
         else: b=b-a
