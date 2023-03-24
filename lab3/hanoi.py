@@ -1,18 +1,12 @@
 
+def hanoi(n, z, na, tym):
+    if n == 1:
+        print("Przenoszę dysk z", z, "na", na)
+    else:   
+        hanoi(n-1, z, tym, na)
+        print("Przenoszę dysk z", z, "na", na)
+        hanoi(n-1, tym, na, z)
 
-# def dysk(z, na):
-#     print("Przenoszę dysk ze", z, "na", na)
-
-# def hanoi(n, z, na, tym):
-#     if n == 1:
-#         dysk(z, na)
-#     else:
-#         hanoi(n-1, z, tym, na)
-#         dysk(z, na)
-#         hanoi(n-1, tym, na, z)
-
-# n=1
-
-# hanoi(n, 'A', 'C', 'B')
-
-#zrób to samemu jakoś
+n=2 #n to piętra wierzy 
+#chcemy przenieść wszystkie krąrzki z A na C a B jest kołkiem tymczasowym
+hanoi(n, "A", "C", "B") 
