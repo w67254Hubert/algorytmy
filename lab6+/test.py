@@ -1,6 +1,5 @@
 a='())(()))'
-tab = list(a)
-
-for x in tab:
-    if x=='(':
-        
+tab = a[1]
+l=len(a)
+print(tab)
+print(l)

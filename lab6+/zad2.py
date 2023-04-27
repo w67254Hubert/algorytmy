@@ -13,37 +13,37 @@ class Stack:
     def size(self):
         return len(self.items)
 
-a='())(()))'
-tab = list(a)
+str='(((((()))()()'
+# str = list(a)
 s= Stack()
-l=len(a)
+l=len(str)
 i=0
 b=0
-c=0
-print(tab)
+
+print(str)
 
 while i<l:
 
-    if tab[i]=='(':
-        s.push(tab[i])
-        # print("otwierający w ineksie", i)
-        # c=c+1
-        # DO DOKOŃCZENIA INDEKSOWANIE "(" NAWIASÓW
+    if str[i]=='(':
+        s.push(str[i])
     else:
-        if s.isEmpty():
-            print("zamykajacy w ineksie",i)
+        if s.isEmpty() and str[i]==')':
+            # print("zamykajacy w ineksie",i)
             b=b+1
         else:
             s.pop()
     i+=1
+
+if s.size()>0 and b>0:
+    print("złe ustawienie nawiasów: )(")
+    
 if b==0:
     if s.isEmpty():
         print("wszystko dobrze")
     else:
-        print("brakuje otwierających ", s.size())
+       print("za durzo otwierających ", s.size())
 else:
-    print("za durzo zamykajacych ",b)
-
+        print("za durzo zamykajacych ",b)
 
 
 # print(s.isEmpty())
