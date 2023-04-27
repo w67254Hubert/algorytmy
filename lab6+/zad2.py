@@ -1,10 +1,3 @@
-# definiuje stos pusty
-# zadeklaruj 2 zmienne jeedna boolowska zakładająca że stos jest poprawny oraz zemienna indeks złurząca do przechodzienia elem listy
-#
-# dopuki ilość naszego elementu jest mniejsza od size
-#
-# jeśli znak jest nawiasem otwierającym dodaj znak na stos
-# w przeciwnym wypadku ozxnacza to że nawias zamykajocy sprawdź czy st0s jest pusty "podstaw folsa"
 
 class Stack:
     def __init__(self):
