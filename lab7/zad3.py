@@ -13,7 +13,7 @@ class Stack:
     def size(self):
         return len(self.items)
 
-str=')}]{(['
+str='}])([{'
 s= Stack()
 l=len(str)
 naw = [['(',')'],['[',']'],['{','}']]
@@ -21,7 +21,6 @@ naw = [['(',')'],['[',']'],['{','}']]
 print(naw)
 
 for x in naw:
-    print(x)
     i=0
     b=0
     s.__init__()
