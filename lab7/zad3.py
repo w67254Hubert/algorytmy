@@ -1,3 +1,4 @@
+
 class Stack:
     def __init__(self):
         self.items = []
@@ -15,109 +16,39 @@ class Stack:
 str=')}]{(['
 s= Stack()
 l=len(str)
-i=0
-b=0
+naw = [['(',')'],['[',']'],['{','}']]
 
-# można by zrobić to na mniejszej ilość linijek ale nie jest wymagana mała ilość linijek
-print(str)
+print(naw)
 
-while i<l:
-
-    if str[i]=='(':
-        s.push(str[i])
-    else:
-        if s.isEmpty() and str[i]==')':
-            # print("zamykajacy w ineksie",i)
-            b=b+1
-        elif str[i]==')':
-            s.pop()
-        else:
-            pass
-    i+=1
-
-if s.size()>0 and b>0:
-    print("złe ustawienie 'końcowych' nawiasów: )(")
+for x in naw:
+    print(x)
+    i=0
+    b=0
+    s.__init__()
     
-if b==0 and s.isEmpty(): 
-        print("wszystko dobrze ()")
+    while i<l:
 
-if s.size()>0:
-    print("za durzo otwierających ( ", s.size())
-if b>0:
-    print("za durzo zamykajacych ) ",b)
-
-print()
-
-i=0
-b=0
-s.__init__()
-
-
-while i<l:
-
-    if str[i]=='[':
-        s.push(str[i])
-    else:
-        if s.isEmpty() and str[i]==']':
-            # print("zamykajacy w ineksie",i)
-            b=b+1
-        elif str[i]==']':
-            s.pop()
+        if str[i]==x[0]:
+            s.push(str[i])
         else:
-            pass
-    i+=1
+            if s.isEmpty() and str[i]==x[1]:
+                # print("zamykajacy w ineksie",i)
+                b=b+1
+            elif str[i]==x[1]:
+                s.pop()
+            else:
+                pass
+        i+=1
 
-if s.size()>0 and b>0:
-    print("złe ustawienie 'końcowych' nawiasów: ][")
-    
-if b==0:
-    if s.isEmpty():
-        print("wszystko dobrze []")
-    else:
-       print("za durzo otwierających [ ", s.size())
-else:
-        print("za durzo zamykajacych ] ",b)
+    if s.size()>0 and b>0:
+        print("złe ustawienie 'końcowych' nawiasów: ",x[1],x[0])
+        
+    if b==0 and s.isEmpty(): 
+            print("wszystko dobrze ",x[0],x[1])
 
+    if s.size()>0:
+        print("za durzo otwierających ",x[0]," ", s.size())
+    if b>0:
+        print("za durzo zamykajacych ",x[1]," ", b)
 
-print()
-
-i=0
-b=0
-s.__init__()
-
-
-while i<l:
-
-    if str[i]=='{':
-        s.push(str[i])
-    else:
-        if s.isEmpty() and str[i]=='}':
-            # print("zamykajacy w ineksie",i)
-            b=b+1
-        elif str[i]=='}':
-            s.pop()
-        else:
-            pass
-    i+=1
-
-if s.size()>0 and b>0:
-    print("złe ustawienie 'końcowych' nawiasów: }{")
-    
-if b==0:
-    if s.isEmpty():
-        print("wszystko dobrze {}")
-    else:
-       print("za durzo otwierających { ", s.size())
-else:
-        print("za durzo zamykajacych } ",b)
-
-
-# print(s.isEmpty())
-# s.push(4)
-# s.push('dog')
-# s.push('34')
-# print(s.isEmpty())
-# print(s.size())
-# s.pop()
-# print(s.size())
-# print(s.peek())
+    print()
