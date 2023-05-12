@@ -18,44 +18,44 @@ class Stack:
 
 
 str= '7 3 + 5 2 - 2 ^ * ='
-str2=str.split(' ')
-print(str2)
+lisStr=str.split(' ')
+print(lisStr)
 s= Stack()
-l=len(str2)
+l=len(lisStr)
 i=0
 b=0
 
 print("tak wygląda dzialanie ", str)
 
 for i in range(l):
-    if '+'==str2[i]:
+    if '+'==lisStr[i]:
         x=s.pop()
         y=s.pop()
         s.push(y+x)
         
-    elif '-'==str2[i]:
+    elif '-'==lisStr[i]:
         x=s.pop()
         y=s.pop()
         s.push(y-x)
-    elif '*'==str2[i]:
+    elif '*'==lisStr[i]:
         x=s.pop()
         y=s.pop()
         s.push(y*x)
 
-    elif '/'==str2[i]:
+    elif '/'==lisStr[i]:
         x=s.pop()
         y=s.pop()
         s.push(y/x)
 
-    elif '^'==str2[i]:
+    elif '^'==lisStr[i]:
         x=s.pop()
         y=s.pop()
         s.push(y**x)
-    elif '='==str2[i]:
+    elif '='==lisStr[i]:
         print("wynik", s.peek())
 
     else:
-        s.push(int(str2[i]))
+        s.push(int(lisStr[i]))
 
 
 
