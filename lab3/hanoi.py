@@ -7,6 +7,6 @@ def hanoi(n, z, na, tym):
         print("Przenoszę dysk z", z, "na", na)
         hanoi(n-1, tym, na, z)
 
-n=2 #n to piętra wierzy 
+n=4 #n to piętra wierzy 
 #chcemy przenieść wszystkie krąrzki z A na C a B jest kołkiem tymczasowym
 hanoi(n, "A", "C", "B") 
