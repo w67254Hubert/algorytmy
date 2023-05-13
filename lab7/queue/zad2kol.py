@@ -20,10 +20,10 @@ for x in ppl:
 
 while q.size()>1:
     i=random.randint(1,20)
-    while i<9:
+    while i!=0:
         tym=q.denqueue()
         q.enqueue(tym)
-        i=i+1
+        i=i-1
     q.denqueue()
 
 print(q.items)
