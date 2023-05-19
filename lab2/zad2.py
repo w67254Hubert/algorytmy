@@ -1,7 +1,7 @@
 
 a = [-2,0,4,-3,2,7]
 n=6
-i=1
+i=0
 while i<n-1:
 # for i in range(n-1,0,-1):   
     # print('i w for',i)
