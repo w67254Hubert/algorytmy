@@ -43,6 +43,15 @@ def binarysearch(lista,left,right,szukana):
             left=srodek+1
 
     return -1
+def randlis(x,y,n):
+    lis=[]
+    k=n
+    while k>0:
+        a=random.randint(x,y)
+        lis.append(a)
+        k=k-1
+        
+    return lis
 
 
 n= int(input("podaj długość listy"))
@@ -60,12 +69,27 @@ y=int(input("podaj końcową liczbe przedziału liczb"))
 while y<x:
     x=int(input("podaj początek przedziału liczbe, liczbę większą od x"))
 
-lis=[]
-k=n
-while k>0:
-    a=random.randint(x,y)
-    lis.append(a)
-    k=k-1
+
+
+lis=randlis(x,y,n)
+
+#to jest strasznie nieoptymalne ale chyba tak i był zamysł zadania?     
+
+
+while True:
+    lis.clear()
+    liczDup=0
+
+    lis=randlis(x,y,n)
+
+    for i in range(n):
+        for j in range(i + 1, n):
+            if lis[i] == lis[j]:
+                liczDup = liczDup + 1
+    if liczDup == 0:
+        break
+#
+
 
 quicksort(0,n-1,lis)
 print(lis)
@@ -74,4 +98,4 @@ print(lis)
 szuk=int(input(" czego szukasz"))
 
 wynikSzuk=binarysearch(lis,0,n-1,szuk)
-print("wynikiem szukania jest",wynikSzuk)
+print("szukana liczba występuje na indeksie: ",wynikSzuk)
