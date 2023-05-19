@@ -10,68 +10,87 @@
 
 import random
 
-def quicksort(l, r, list):
-    if l >= r:
-        return
+class node:
+    def quicksort(l, r, list):
+        if l >= r:
+            return
 
-    v = list[r]
-    p = l
+        v = list[r]
+        p = l
 
-    for j in range(l, r):
-        if list[j] < v:
-            list[p], list[j] = list[j], list[p]
-            p += 1
+        for j in range(l, r):
+            if list[j] < v:
+                list[p], list[j] = list[j], list[p]
+                p += 1
 
-    list[p], list[r] = list[r], list[p]
+        list[p], list[r] = list[r], list[p]
 
-    quicksort(l, p - 1, list)
-    quicksort(p + 1, r, list)
-    return list
+        node.quicksort(l, p - 1, list)
+        node.quicksort(p + 1, r, list)
+        return list
 
+    def binarysearch(lista,left,right,szukana):
 
-def binarysearch(lista,left,right,szukana):
-    left=0
-    right=n-1
-    srodek=(left+right)//2
-    while left<=right:
-        srodek = (left + right) // 2
-        if lista[srodek] ==szukana:
-             return srodek
-        elif lista[srodek]>szukana:
-            right=srodek-1
+        a=0
+        for x in lista:
+            if szukana==x:
+                a=a+1
+
+        if a>0:
+            left=0
+            right=n-1
+            srodek=(left+right)//2
+            while left<=right:
+                srodek = (left + right) // 2
+                if lista[srodek] ==szukana:
+                    return srodek
+                elif lista[srodek]>szukana:
+                    right=srodek-1
+                else:
+                    left=srodek+1
+
+            return -1
         else:
-            left=srodek+1
+            return "nie ma takiej pozycji"
 
-    return -1
+    
+    
+    def lisFill(n,x,y):
+        lis=[]
+        while n>0:
+            a=random.randint(x,y)
+            lis.append(a)
+            n=n-1       
+        return lis
+        
+        
 
 
-n= int(input("podaj długość listy"))
+
+
+n= int(input("podaj długość listy "))
 
 while n<=0:
-    n=int(input("podaj liczbę większą od 0"))
+    n=int(input("podaj liczbę większą od 0 "))
 
 
-x=int(input("podaj początek przedziału liczb"))
+x=int(input("podaj początek przedziału liczb "))
 while x is int:
-    x=int(input("podaj x początek przedziału liczbe, liczbę większą lub równą 0"))
+    x=int(input("podaj x początek przedziału liczbe, liczbę większą lub równą 0 "))
 
 
-y=int(input("podaj końcową liczbe przedziału liczb"))
+y=int(input("podaj końcową liczbe przedziału liczb "))
 while y<x:
-    x=int(input("podaj początek przedziału liczbe, liczbę większą od x"))
-
-lis=[]
-k=n
-while k>0:
-    a=random.randint(x,y)
-    lis.append(a)
-    k=k-1
-
-quicksort(0,n-1,lis)
-print(lis)
+    x=int(input("podaj początek przedziału liczbe, liczbę większą od x "))
 
 
-szuk=int(input(" czego szukasz"))
 
-wynikSzuk=binarysearch(lis,0,n-1,szuk)
-print("wynikiem szukania jest",wynikSzuk)
+
+lis=node.lisFill(n,x,y)
+sortlis=node.quicksort(0,n-1,lis)
+print(sortlis)
+
+szuk=int(input("czego szukasz "))
+
+wynikSzuk=node.binarysearch(sortlis,0,n-1,szuk)
+print("wynik szukania jest na pozycji ",wynikSzuk)

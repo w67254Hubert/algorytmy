@@ -62,11 +62,11 @@ class unOrderdList:
                 found=True
             else:
                 previous=current
-                current=current.getNexst()
+                current=current.getNext()
         if previous==None:
-            self.head=current.getNexst()
+            self.head=current.getNext()
         else:
-            previous.setNexst(current.getNexst())
+            previous.setNext(current.getNext())
 
 mylist=unOrderdList()
 mylist.add(12)
