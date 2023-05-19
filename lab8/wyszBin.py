@@ -63,10 +63,6 @@ class node:
             n=n-1       
         return lis
         
-        
-
-
-
 
 n= int(input("podaj długość listy "))
 
@@ -87,6 +83,26 @@ while y<x:
 
 
 lis=node.lisFill(n,x,y)
+licznikDuplikatow = 0
+for i in range(n):
+    for j in range(i+1, n):
+        if lis[i] == lis[j]:
+            licznikDuplikatow = licznikDuplikatow + 1
+if licznikDuplikatow > 0:
+    while True:
+        lis.clear()
+        liczDup=0
+
+        lis=node.lisFill(n,x,y)
+
+
+        for i in range(n):
+            for j in range(i + 1, n):
+                if lis[i] == lis[j]:
+                    liczDup = liczDup + 1
+        if liczDup == 0:
+            break
+
 sortlis=node.quicksort(0,n-1,lis)
 print(sortlis)
 
