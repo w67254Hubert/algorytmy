@@ -169,7 +169,6 @@ print("macierz sąsiedztwa \n")
 print(pandas.Series(g.genAdjacencyMatrix()))
 lisForVis=g.genAdjacencyMatrix()
 
-# dokończ 3 interpretację graficzną grafu
 print('interpretacja graficzna grafu')
 g.seeGraph()
 
@@ -179,3 +178,6 @@ connections = g.seeGraph()
 print("Lista połączeń:")
 for connection in connections:
     print(connection)
+
+
+#zadadanie 4  dokończ 3 interpretację graficzną grafu
