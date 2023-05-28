@@ -1,4 +1,9 @@
 import pandas
+#bibliotegi z poradnika ogarnij
+import networkx as nx
+import matplotlib.pyplot as plt
+
+# import matplotlib.pyplot as plt
 
 class Vertex:
     def __init__(self, key):
@@ -54,17 +59,19 @@ class Graph:
     def __iter__(self):
         return iter(self.vertList.values())
     
-    #zrozum tą funkcje!!!!!!!!!!!!!!!!!!
 
-    def generateAdjacencyMatrix(graph):
-        vertices = list(graph.getVertices())
-        numVertices = len(vertices)
+    def genAdjacencyMatrix(self):
+        vertices = list(self.getVertices())
+        numOfVertices = len(vertices)
 
-        # Inicjalizacja macierzy
-        adjacencyMatrix = [[0] * numVertices for _ in range(numVertices)]
-
-        # Wypełnianie macierzy
-        for vertex in graph:
+        # tworzenie pustej macierzy
+        adjacencyMatrix=[]
+        adjacencylist = [0] * numOfVertices
+        for x in range(numOfVertices):
+            adjacencyMatrix.append(adjacencylist)
+        
+        # wypełnianie macierzy
+        for vertex in self:
             vertexId = vertex.getId()
             connections = vertex.getConnections()
             for connection in connections:
@@ -72,12 +79,23 @@ class Graph:
                 weight = vertex.getWeight(connection)
                 adjacencyMatrix[vertexId][connectionId] = weight
 
-        return  pandas.Series(adjacencyMatrix)
+        return  adjacencyMatrix
+        
+    def seeGraph(graph):
+        connectionList = []
 
+        for vertex in graph:
+            vertexId = vertex.getId()
+            connections = vertex.getConnections()
+            for connection in connections:
+                connectionId = connection.getId()
+                weight = vertex.getWeight(connection)
+                connectionList.append((vertexId, connectionId, weight))
+
+        return connectionList
 
 
 g = Graph()
-
 # for i in range(6):
 #     g.addVertex(i)
 #     g.vertList
@@ -99,12 +117,12 @@ g = Graph()
 
 
 try:
-    graf=input("jaki chcesz graf?\n[1] nieskierowany\n[2] skierowany\n[3] ważony")
+    graf="2" #input("jaki chcesz graf?\n[1] nieskierowany\n[2] skierowany\n[3] ważony")
 except ValueError:
     print("o nie to nie działa bo ktoś nie umie wykonać polecenia")
 
 try:
-    wiersz=int(input('ile wieszhołków będzie?'))
+    wiersz=3 #int(input('ile wieszhołków będzie?'))
 except ValueError:
     print("o nie to nie działa bo ktoś nie umie wykonać polecenia")
 
@@ -114,28 +132,28 @@ for i in range(wiersz):
     g.vertList
 
 try:
-    poł=int(input('ile połączeń ma być?'))
+    poł=3 #int(input('ile połączeń ma być?'))
 except ValueError:
     print("o nie to nie działa bo ktoś nie umie wykonać polecenia")
 
 
 if graf=="1":
     for i in range(poł):
-        f=int(input('podaj początek połącznienia '+str(i)+"  "))
-        t=int(input('podaj koniec połącznienia '+str(i)+"  "))
+        f=int(input('podaj początek połącznienia '+str(i)+":  "))
+        t=int(input('podaj koniec połącznienia '+str(i)+":  "))
         g.addEdge(f, t,1)
         g.addEdge(t, f,1)
 
 if graf=="2":
     for i in range(poł):
-        f=int(input('podaj początek połącznienia '+str(i)+"  "))
-        t=int(input('podaj koniec połącznienia '+str(i)+"  "))
+        f=int(input('podaj początek połącznienia '+str(i)+":  "))
+        t=int(input('podaj koniec połącznienia '+str(i)+":  "))
         g.addEdge(f, t,1)
 if graf=="3":
     for i in range(poł):
-        f=int(input('podaj początek połącznienia '+str(i)+"  "))
-        t=int(input('podaj koniec połącznienia '+str(i)+"  "))
-        w=int(input('podaj wartość połącznienia '+str(i)+"  "))
+        f=int(input('podaj początek połącznienia '+str(i)+":  "))
+        t=int(input('podaj koniec połącznienia '+str(i)+":  "))
+        w=int(input('podaj wartość połącznienia '+str(i)+":  "))
         g.addEdge(f, t, w)
 
 
@@ -148,8 +166,16 @@ for i in g:
 
 '\n'
 print("macierz sąsiedztwa \n")
-print(g.generateAdjacencyMatrix())
-
+print(pandas.Series(g.genAdjacencyMatrix()))
+lisForVis=g.genAdjacencyMatrix()
 
 # dokończ 3 interpretację graficzną grafu
-#zrozum funkcje
+print('interpretacja graficzna grafu')
+g.seeGraph()
+
+connections = g.seeGraph()
+# Wyświetlenie listy połączeń testy z do tego teraz potrzeba stworzyć  
+#graficzną reprezentację
+print("Lista połączeń:")
+for connection in connections:
+    print(connection)
