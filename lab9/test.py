@@ -55,6 +55,7 @@ class GraphVisualization:
     def visualize(self):
         G = nx.Graph()
         G.add_edges_from(self.visual)
+        print(self.visual)
         nx.draw_networkx(G)
         plt.show()
   

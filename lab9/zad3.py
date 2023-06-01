@@ -80,7 +80,7 @@ class Graph:
                 adjacencyMatrix[vertexId][connectionId] = weight
 
         return  adjacencyMatrix
-        
+    #pokazuje ogólną wizualizacje grafu bez wartości połączeń 
     def seeGraph(graph):
         connectionList = []
 
@@ -89,11 +89,17 @@ class Graph:
             connections = vertex.getConnections()
             for connection in connections:
                 connectionId = connection.getId()
-                weight = vertex.getWeight(connection)
-                connectionList.append((vertexId, connectionId, weight))
+                connectionList.append([vertexId, connectionId])
 
-        return connectionList
+        connections=[]
+        for connection in connectionList:
+            connections.append(connection)
 
+        G = nx.Graph()
+        G.add_edges_from(connections)
+        nx.draw_networkx(G)
+        plt.show()
+    #algorytm Dijkstri działanie
 
 g = Graph()
 # for i in range(6):
@@ -172,12 +178,4 @@ lisForVis=g.genAdjacencyMatrix()
 print('interpretacja graficzna grafu')
 g.seeGraph()
 
-connections = g.seeGraph()
-# Wyświetlenie listy połączeń testy z do tego teraz potrzeba stworzyć  
-#graficzną reprezentację
-print("Lista połączeń:")
-for connection in connections:
-    print(connection)
-
-
-#zadadanie 4  dokończ 3 interpretację graficzną grafu
+#zadadanie 4
