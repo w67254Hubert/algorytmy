@@ -2,8 +2,8 @@ import pandas
 #bibliotegi z poradnika ogarnij
 import networkx as nx
 import matplotlib.pyplot as plt
-
-# import matplotlib.pyplot as plt
+#do dicsttrty
+import sys
 
 class Vertex:
     def __init__(self, key):
@@ -60,7 +60,7 @@ class Graph:
         return iter(self.vertList.values())
     
 
-    def genAdjacencyMatrix(self):
+    def getAdjacencyMatrix(self):
         vertices = list(self.getVertices())
         numOfVertices = len(vertices)
 
@@ -81,10 +81,10 @@ class Graph:
 
         return  adjacencyMatrix
     #pokazuje ogólną wizualizacje grafu bez wartości połączeń 
-    def seeGraph(graph):
+    def seeGraph(self):
         connectionList = []
 
-        for vertex in graph:
+        for vertex in self:
             vertexId = vertex.getId()
             connections = vertex.getConnections()
             for connection in connections:
@@ -99,7 +99,42 @@ class Graph:
         G.add_edges_from(connections)
         nx.draw_networkx(G)
         plt.show()
-    #algorytm Dijkstri działanie
+    #algorytm Dijkstri działanie do rozkminienia    
+    def dicstry(self,start):
+        
+        distances = {v: sys.maxsize for v in self.getVertices()}
+        distances[start] = 0
+        visited = set()
+
+        while len(visited) < self.numVertices:
+            current = None
+            min_distance = sys.maxsize
+
+            for vertex in self:
+                if vertex.getId() not in visited and distances[vertex.getId()] < min_distance:
+                    current = vertex
+                    min_distance = distances[vertex.getId()]
+
+            if current is None:
+                break
+
+            visited.add(current.getId())
+
+            for neighbor in current.getConnections():
+                weight = current.getWeight(neighbor)
+                distance = distances[current.getId()] + weight
+
+                if distance < distances[neighbor.getId()]:
+                    distances[neighbor.getId()] = distance
+
+        return distances
+
+
+
+
+        
+        
+
 
 g = Graph()
 # for i in range(6):
@@ -172,10 +207,13 @@ for i in g:
 
 '\n'
 print("macierz sąsiedztwa \n")
-print(pandas.Series(g.genAdjacencyMatrix()))
-lisForVis=g.genAdjacencyMatrix()
+print(pandas.Series(g.getAdjacencyMatrix()))
+lisForVis=g.getAdjacencyMatrix()
 
 print('interpretacja graficzna grafu')
 g.seeGraph()
 
 #zadadanie 4
+
+s = int(input('Podaj wieszchołek startowy\n s = '))
+g.dicstry(s)
