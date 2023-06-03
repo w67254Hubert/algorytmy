@@ -99,7 +99,7 @@ class Graph:
         G.add_edges_from(connections)
         nx.draw_networkx(G)
         plt.show()
-    #algorytm Dijkstri działanie do rozkminienia    
+    #algorytm Dijkstri działanie do rozkminienia / przerobienia   
     def dicstry(self,start):
         
         distances = {v: sys.maxsize for v in self.getVertices()}
