@@ -11,7 +11,7 @@ class Graph:
         return self.find(parent, parent[i])
 
     def kruskal(self):
-        result = []
+        T = []
         i = 0
         e = 0
 
@@ -32,11 +32,11 @@ class Graph:
 
             if x != y:
                 e += 1
-                result.append([u, v, w])
+                T.append([u, v, w])
                 parent[x] = y
 
         minCost = 0
-        for u, v, weight in result:
+        for u, v, weight in T:
             minCost += weight
             print(f"{u} -- {v} == {weight}")
 
