@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-06-10T16:04:36.720Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0" etag="oLrP5eLOqW2RL2Qek6F3" version="21.2.3" type="github">
+<mxfile host="app.diagrams.net" modified="2023-06-10T16:17:15.561Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0" etag="HmGONVPD0lS7auRjXMOG" version="21.2.3" type="github">
   <diagram name="Strona-1" id="iPhr7PlDGqVEThkHn5D_">
-    <mxGraphModel dx="2082" dy="968" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1190" dy="553" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -133,7 +133,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="0Re7B0yEwOGne8VivqP7-31" value="liczba krawędzi w T&lt;br&gt;=&lt;br&gt;liczbie wieszchołków-1?" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+        <mxCell id="0Re7B0yEwOGne8VivqP7-31" value="liczba krawędzi w T&lt;br&gt;==&lt;br&gt;liczbie wieszchołków-1?" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
           <mxGeometry x="275" y="800" width="170" height="90" as="geometry" />
         </mxCell>
         <mxCell id="0Re7B0yEwOGne8VivqP7-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0Re7B0yEwOGne8VivqP7-34">
