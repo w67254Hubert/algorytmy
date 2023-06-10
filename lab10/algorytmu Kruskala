@@ -1,9 +1,39 @@
-<mxfile host="app.diagrams.net" modified="2023-06-10T15:19:06.098Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0" version="21.2.3" etag="hm26DU-ukBxLPSKvDIZ_" type="github">
+<mxfile host="app.diagrams.net" modified="2023-06-10T15:36:24.816Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0" etag="0VWr_ZI4ssmFHxhQMupF" version="21.2.3" type="github">
   <diagram name="Strona-1" id="iPhr7PlDGqVEThkHn5D_">
-    <mxGraphModel>
+    <mxGraphModel dx="1249" dy="581" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="0Re7B0yEwOGne8VivqP7-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="0Re7B0yEwOGne8VivqP7-1" target="0Re7B0yEwOGne8VivqP7-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0Re7B0yEwOGne8VivqP7-1" value="stwórz graf (G) przypisując wagi do krawędzi w grafie" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="70" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="0Re7B0yEwOGne8VivqP7-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="0Re7B0yEwOGne8VivqP7-2" target="0Re7B0yEwOGne8VivqP7-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0Re7B0yEwOGne8VivqP7-2" value="start&lt;br&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="10" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0Re7B0yEwOGne8VivqP7-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="0Re7B0yEwOGne8VivqP7-4" target="0Re7B0yEwOGne8VivqP7-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0Re7B0yEwOGne8VivqP7-4" value="utwórz pusty zbiór T" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0Re7B0yEwOGne8VivqP7-6" value="sortuj zbiór krawędzi&amp;nbsp; od najmniejszej do największej wagi krawędzi" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="275" y="240" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0Re7B0yEwOGne8VivqP7-10" value="" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="390" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0Re7B0yEwOGne8VivqP7-12" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0Re7B0yEwOGne8VivqP7-13" value="dodaj krawędź początkową do zbioru T i usuń ją z G" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
